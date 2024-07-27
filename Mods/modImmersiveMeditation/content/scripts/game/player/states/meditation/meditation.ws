@@ -20,7 +20,7 @@ state Meditation in W3PlayerWitcher extends MeditationBase
 	private var isEntryFunctionLocked : bool;				
 	private var scheduledGoToWaiting : bool;				
 	private var changedContext : bool;						
-
+	
 	// ImmersiveMeditation++
 	private var isOutside	: int;
 	private var medVec : Vector;

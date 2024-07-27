@@ -430,23 +430,7 @@ statemachine class W3PlayerWitcher extends CR4Player
 		FactsAdd("NGE_SkillPointsCheck");
 	}
 	
-	//Immersive Meditation RovanFrost Fix
-	timer function IM_Clock( dt : float, id : int ) 
-	{ 
-		((CMeditationUI)thePlayer.getMeditation()).ClockFix(); 
-	}
-	timer function IM_Unblock( dt : float, id : int ) 
-	{ 
-		if ( GetWitcherPlayer().GetCurrentStateName() != 'Meditation' )
-		{
-			((CMeditationUI)thePlayer.getMeditation()).UnblockFix();
-		}
-		else
-		{
-			thePlayer.AddTimer('IM_Unblock', 0.2, false);
-		}
-	}
-	//Immersive Meditation RovanFrost Fix
+	
 	
 	private function FixNGESwords()
 	{
@@ -9556,9 +9540,8 @@ statemachine class W3PlayerWitcher extends CR4Player
 		if(theGame.IsGameTimePaused())
 			return false;
 			
-		// ImmersiveMeditation
-		/*if(!IsActionAllowed( EIAB_MeditationWaiting ))
-			return false;*/
+		//if(!IsActionAllowed( EIAB_MeditationWaiting ))	// ImmersiveMeditation
+			//return false;
 			
 		return true;
 	}

@@ -947,7 +947,7 @@ class CPlayerInput
 			if( imInstalled )
 				((CMeditationUI)thePlayer.getMeditation()).NewMeditate();
 			else
-				theGame.RequestMenuWithBackground( 'MeditationClockMenu', 'CommonMenu' );
+			theGame.RequestMenuWithBackground( 'MeditationClockMenu', 'CommonMenu' );
 
 			//Immersive Meditation--
 		}
@@ -3116,20 +3116,6 @@ class CPlayerInput
 	{
 		var med : W3PlayerWitcherStateMeditation;
 		
-		//Immersive Meditation++
-		
-		var imInstalled : bool;
-		
-		if( StringToFloat( theGame.GetInGameConfigWrapper().GetVarValue('ImmersiveCamPositionsMeditation', 'medRotSpeed') ) >= 0.1 )
-			imInstalled = true;
-			
-		if( ((CMeditationUI)thePlayer.getMeditation()).getMedMenuBool() && imInstalled )
-		{
-			((CMeditationUI)thePlayer.getMeditation()).NewMeditate();
-		}
-		
-		//Immersive Meditation--
-		
 		if (!theGame.GetGuiManager().IsAnyMenu())
 		{
 			med = (W3PlayerWitcherStateMeditation)GetWitcherPlayer().GetCurrentState();
@@ -3403,13 +3389,13 @@ class CPlayerInput
 		//Immersive Meditation++
 		if( StringToFloat( theGame.GetInGameConfigWrapper().GetVarValue('ImmersiveCamPositionsMeditation', 'medRotSpeed') ) >= 0.1 )
 			imInstalled = true;
-
+		
 		if( IsReleased(action) 
 			&& openedPanel != 'GlossaryTutorialsMenu' 
 			&& !theGame.GetGuiManager().IsAnyMenu() 
 			&& !theGame.IsBlackscreenOrFading() 
 			&& FactsQuerySum("nge_pause_menu_disabled") <= 0 ) 
-		{		
+		{
 			if( ((CMeditationUI)thePlayer.getMeditation()).getMedMenuBool() && imInstalled )
 			{
 				((CMeditationUI)thePlayer.getMeditation()).NewMeditate();
@@ -3429,8 +3415,8 @@ class CPlayerInput
 				if ( theGame.IsBlackscreenOrFading() )
 					return false;
 					
-				theGame.SetMenuToOpen( '' );
-				theGame.RequestMenu('CommonIngameMenu' );
+			theGame.SetMenuToOpen( '' );
+			theGame.RequestMenu('CommonIngameMenu' );
 			}
 			//Immersive Meditation--
 		}

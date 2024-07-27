@@ -87,6 +87,7 @@ class CR4MeditationClockMenu extends CR4MenuBase
 		
 		m_guiManager.RequestMouseCursor(true);	//Immersive Meditation
 		
+		
 			//theGame.Pause("menus"); //Immersive Meditation
 		
 	}
@@ -114,21 +115,6 @@ class CR4MeditationClockMenu extends CR4MenuBase
 	
 	event  OnCloseMenu()
 	{
-		//Immersive Meditation++
-		var passedSecondsInGameTime : float;
-		var passedSecondsInRealTime : float;
-		if(thePlayer.GetCurrentStateName() != 'MeditationWaiting' || thePlayer.GetCurrentStateName() != 'Meditation')
-		{
-			passedSecondsInGameTime = GameTimeToSeconds(theGame.GetGameTime() - ((CMeditationUI)thePlayer.getMeditation()).getWaitStartTime());
-			passedSecondsInRealTime = ConvertGameSecondsToRealTimeSeconds(passedSecondsInGameTime);
-
-			((CMeditationUI)thePlayer.getMeditation()).setMedMenuBool(true);
-			((CMeditationUI)thePlayer.getMeditation()).NewMeditate();			
-		}
-		//Immersive Meditation--
-		else
-		{
-		
 		if(thePlayer.GetCurrentStateName() == 'MeditationWaiting')
 		{
 			MeditatingEnd();
@@ -148,8 +134,6 @@ class CR4MeditationClockMenu extends CR4MenuBase
 		if( m_parentMenu )
 		{
 			m_parentMenu.ChildRequestCloseMenu();
-		}
-		
 		}
 	}
 	

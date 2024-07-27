@@ -112,10 +112,6 @@ statemachine abstract import class CR4Player extends CPlayer
 	public		var	interiorTracker			:CPlayerInteriorTracker;
 	public		var m_SettlementBlockCanter : int;
 	
-	// ImmersiveMeditation
-	public 			var mImmersive 				: CMeditationImmersive;
-	public editable var mMeditation 			: CMeditationUI;
-	
 	
 	
 	private var fistFightMinigameEnabled	: bool;
@@ -255,48 +251,6 @@ statemachine abstract import class CR4Player extends CPlayer
 	{
 		submergeDepth = depth;
 	}
-	
-	// ImmersiveMeditation++
-	timer function SetMeditationVars(dt : float, id : int)
-	{
-		mImmersive.SetMeditationVars();
-	}
-	
-	public function getMeditation() : CMeditationUI
-	{
-		return this.mMeditation;
-	}
-	
-	public function setMeditation( mMeditation : CMeditationUI)
-	{
-		this.mMeditation = mMeditation;
-	}
-	
-	timer function BeginNewMeditation(dt : float, id : int)
-	{
-		this.mMeditation.NewMeditate();
-	}
-	
-	public function UpdateCameraMeditation( out moveData : SCameraMovementData, timeDelta : float )
-	{
-		theGame.GetGameCamera().ChangePivotRotationController( 'ExplorationInterior' );
-		theGame.GetGameCamera().ChangePivotDistanceController( 'Default' );
-		theGame.GetGameCamera().ChangePivotPositionController( 'Default' );
-	
-		// HACK
-		moveData.pivotRotationController = theGame.GetGameCamera().GetActivePivotRotationController();
-		moveData.pivotDistanceController = theGame.GetGameCamera().GetActivePivotDistanceController();
-		moveData.pivotPositionController = theGame.GetGameCamera().GetActivePivotPositionController();
-		// END HACK
-		
-		moveData.pivotPositionController.SetDesiredPosition( GetWorldPosition(), 15.f );
-
-		moveData.pivotDistanceController.SetDesiredDistance( 3.0 ); 
-		moveData.pivotPositionController.offsetZ = 0.3f;
-		
-		DampVectorSpring( moveData.cameraLocalSpaceOffset, moveData.cameraLocalSpaceOffsetVel, Vector( mImmersive.medOffset , mImmersive.medDepth, mImmersive.medHeight  ), 0.6, timeDelta );
-	}
-	// ImmersiveMeditation--
 
 	public function GetSubmergeDepth() : float
 	{
@@ -605,7 +559,6 @@ statemachine abstract import class CR4Player extends CPlayer
 			mMeditation = new CMeditationUI in this;
 		}
 		// ImmersiveMeditation--
-		
 		
 		EnableFindTarget( true );
 		AddTimer( 'CombatCheck', 0.2f, true );

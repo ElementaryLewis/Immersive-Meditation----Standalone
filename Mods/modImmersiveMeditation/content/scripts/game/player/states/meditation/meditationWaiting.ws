@@ -39,7 +39,6 @@ state MeditationWaiting in W3PlayerWitcher extends MeditationBase
 		theGame.GetGameCamera().ChangePivotPositionController( 'Default' );
 		expVec = Vector( parent.mImmersive.expOffset, parent.mImmersive.expDepth, parent.mImmersive.expHeight);
 		// ImmersiveMeditation--
-		
 	
 		virtual_parent.LockEntryFunction( true );
 		

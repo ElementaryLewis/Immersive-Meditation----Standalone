@@ -522,16 +522,6 @@ class CR4CommonMenu extends CR4MenuBase
 		var parentMenuName : name;
 		var ignoreSaveData : bool;
 		
-	// ImmersiveMeditation++
-	if( MenuName == (name)'MeditationClockMenu' )
-	{
-		thePlayer.AddTimer('BeginNewMeditation', 0.1, false);
-		// ((CMeditationUI)thePlayer.getMeditation()).NewMeditate();
-		CloseMenu();
-	}
-	// ImmersiveMeditation--
-	else
-	{
 		currentSubMenu = (CR4MenuBase)GetSubMenu();
 		menuInitData = (W3MenuInitData)GetMenuInitData();
 		
@@ -632,7 +622,6 @@ class CR4CommonMenu extends CR4MenuBase
 			m_guiManager.UpdateUISavedData( GetMenuParentName(parentMenuName), UISavedData.openedCategories, MenuName, UISavedData.selectedModule );
 		}
 		m_GFxBindings.Clear();
-	}
 	}
 	
 	public function ChildMenuConfigured() : void
