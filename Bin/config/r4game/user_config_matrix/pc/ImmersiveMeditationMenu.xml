@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<UserConfig>
+		<Group id="ImmersiveCamPositionsMeditation" displayName="Mods.immersive_meditation">
+			<PresetsArray>
+				<Preset id="0" displayName="standard">
+					<Entry varId="medOffset"	 value="-0.5"/>
+					<Entry varId="medDepth" 	 value="0"/>
+					<Entry varId="medHeight" 	 value="0.5"/>
+					<Entry varId="medPitch"	 	 value="-15.0"/>
+					<Entry varId="medEndFacing"  value="180.0"/>
+					<Entry varId="medRotSpeed" 	 value="0.1"/>
+					<Entry varId="medHPS" 	 value="6.0"/>
+				</Preset>
+				<Preset id="1" displayName="immersive_cam">
+					<Entry varId="medOffset"	 value="-0.6"/>
+					<Entry varId="medDepth" 	 value="1.5"/>
+					<Entry varId="medHeight" 	 value="0.6"/>
+					<Entry varId="medPitch"	 	 value="-1.0"/>
+					<Entry varId="medEndFacing"  value="240"/>
+					<Entry varId="medRotSpeed" 	 value="0.3"/>
+					<Entry varId="medHPS" 	 value="3.0"/>
+				</Preset>
+				<Preset id="2" displayName="witcher2">
+					<Entry varId="medOffset"	 value="-0.35"/>
+					<Entry varId="medDepth" 	 value="1.82"/>
+					<Entry varId="medHeight" 	 value=".52"/>
+					<Entry varId="medPitch"	 	 value="-18.0"/>
+					<Entry varId="medEndFacing"  value="205"/>
+					<Entry varId="medRotSpeed" 	 value="0.4"/>
+					<Entry varId="medHPS" 	 value="3.0"/>
+				</Preset>
+			</PresetsArray>
+			<VisibleVars>
+				<Var overrideGroup="ImmersiveCam" id="useCampfire" displayName="useCampfire" displayType="TOGGLE" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medFreeCam" displayName="medFreeCam" displayType="TOGGLE" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medOffset" displayName="medOffset" displayType="SLIDER;-1.0;1.0;200" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medDepth" displayName="medDepth" displayType="SLIDER;-1.0;3.0;400" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medHeight" displayName="medHeight" displayType="SLIDER;-1.0;1.0;200" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medPitch" displayName="medPitch" displayType="SLIDER;-50.0;50.0;100" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medEndFacing" displayName="medEndFacing" displayType="SLIDER;0.0;360.0;360" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medRotSpeed" displayName="medRotSpeed" displayType="SLIDER;0.0;1.0;10" tags="customNames;nonLocalized;customDisplayName"/>
+				<Var overrideGroup="ImmersiveCam" id="medHPS" displayName="medHPS" displayType="SLIDER;1.0;6.0;5" tags="customNames;nonLocalized;customDisplayName"/>
+			</VisibleVars>
+		</Group>
+</UserConfig>
